@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.tps.Person" table="persontps">
+		<id name="pid">
+			<generator class="assigned"></generator>
+		</id>
+			<property name="name"></property>
+			<property name="gender"></property>
+		<joined-subclass name="com.skumarv.tps.Student" table="studenttps">
+			<key column="sid"></key>
+			<property name="year"></property>
+			<property name="department"></property>
+		</joined-subclass>
+		<joined-subclass name="com.skumarv.tps.Teacher" table="teachertps">
+			<key column="sid"></key>
+			<property name="salary"></property>
+			<property name="subjectExpert"></property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

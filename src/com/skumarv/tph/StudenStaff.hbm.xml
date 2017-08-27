@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.skumarv.tph.Person" table="StudentStaff" discriminator-value="person">
+	<id name="pid">
+		<generator class="assigned"></generator>
+	</id>
+	<discriminator column="type" type="string" ></discriminator>
+	<property name="name"></property>
+	<property name="gender"></property>
+	<subclass name="com.skumarv.tph.Student" discriminator-value="student">
+		<property name="year"></property>
+		<property name="department"></property>
+	</subclass>
+	<subclass name="com.skumarv.tph.Teacher" discriminator-value="staff">
+		<property name="salary"></property>
+		<property name="subjectExpert"></property>
+	</subclass>
+</class>
+</hibernate-mapping>

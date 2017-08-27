@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.tpc.Person" table="persontpc">
+		<id name="pid">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name"></property>
+		<property name="gender"></property>
+		<union-subclass name="com.skumarv.tpc.Student" table="studenttpc">
+			<property name="year"></property>
+			<property name="department"></property>
+		</union-subclass>
+		<union-subclass name="com.skumarv.tpc.Teacher" table="teachertpc">
+			<property name="salary"></property>
+			<property name="subjectExpert"></property>
+		</union-subclass>
+	</class>
+</hibernate-mapping>
