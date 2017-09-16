@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.o2m.Items" table="ITEMS">
+		<id name="id" type="long">
+			<column name="id"></column>
+			<generator class="identity"></generator>
+		</id>
+		<property name="itemId" column="itemId"></property>
+		<property name="itemTotal" column="itemTotal"></property>
+		<property name="quantity" column="quantity"></property>
+		<many-to-one name="cart" class="com.skumarv.o2m.Cart">
+			<column name="cart_id" not-null="true"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.o2o.Customer" table="CUSTOMER">
+		<id name="id" type="long">
+			<column name="id"></column>
+			<generator class="foreign">
+				<param name="property">txn2</param>
+			</generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="email" column="email"></property>
+		<property name="address" column="address"></property>
+		<one-to-one name="txn2" class="com.skumarv.o2o.Txn"></one-to-one>
+	</class>
+</hibernate-mapping>

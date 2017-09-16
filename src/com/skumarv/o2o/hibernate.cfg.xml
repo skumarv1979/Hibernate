@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property><!-- org.hibernate.dialect.MySQLDialect -->
+		<property name="hibernate.connection.driver_name">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/learning</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Sachin@99</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<mapping resource="com/skumarv/o2o/Customer.hbm.xml" />
+		<mapping resource="com/skumarv/o2o/Txn.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

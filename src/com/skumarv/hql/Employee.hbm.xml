@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.hql.Employee" table="EMPLOYEE">
+		<id name="id" type="long">
+			<column name="id"></column>
+			<generator class="identity"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="salary" column="salary"></property>
+		<set name="addresses" fetch="select" table="ADDRESS" cascade="all">
+			<key>
+				<column name="empId"></column>
+			</key>
+			<one-to-many class="com.skumarv.hql.Address"/>
+		</set>
+	</class>
+</hibernate-mapping>

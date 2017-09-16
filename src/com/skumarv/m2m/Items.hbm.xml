@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.skumarv.m2m.Items" table="ITEMSM2M">
+		<id name="item_id">
+			<column name="item_id"></column>
+			<generator class="identity"></generator>
+		</id>
+		<property name="description" column="description"></property>
+		<property name="price" column="price"></property>
+		<!-- <set name="carts" fetch="select" table="CART_ITEMS" cascade="all">
+			<key>
+				<column name="item_id"></column>
+			</key>
+			<many-to-many class="com.skumarv.m2m.Cart" column="cart_id"></many-to-many>
+		</set> -->
+	</class>
+</hibernate-mapping>
